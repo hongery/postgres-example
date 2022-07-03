@@ -47,3 +47,16 @@ packages:
 # table 生成golang代码
 Accoutn table > Accoutn struct
 ```
+
+## Mock db
+
+```
+# install mockdb
+go install github.com/golang/mock/mockgen@v1.6.0
+
+# get 依赖库
+go get github.com/golang/mock/gomock
+
+# make
+make mock
+```

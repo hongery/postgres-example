@@ -19,5 +19,11 @@ sqlc:
 test:
 	go test -v -cover ./...
 
+server:
+	go run main.go
 
-.PHONY: psotgres createdb dropdb migrateup migratedown sqlc test
+mock:
+	mockgen -package mockdb -destination db/mock/store.go postgres/db/sqlc Store
+
+
+.PHONY: psotgres createdb dropdb migrateup migratedown sqlc test server mock
